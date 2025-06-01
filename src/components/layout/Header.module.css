@@ -1,0 +1,371 @@
+/* Header Styles */
+
+.topBar {
+  background: var(--gradient-dark);
+  color: var(--white);
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.topBarContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contactInfo {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gray-300);
+  text-decoration: none;
+  transition: color var(--transition-normal);
+}
+
+.contactItem:hover {
+  color: var(--gold);
+}
+
+.workingHours {
+  color: var(--gray-300);
+  font-size: 0.875rem;
+}
+
+.header {
+  position: fixed;
+  top: 35px; /* Height of top bar */
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+  transition: all var(--transition-normal);
+}
+
+.header.scrolled {
+  top: 0;
+  background: rgba(10, 10, 10, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  transition: transform var(--transition-normal);
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandName {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.tagline {
+  font-family: var(--font-script);
+  font-size: 0.875rem;
+  color: var(--gray-300);
+  line-height: 1;
+}
+
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLink {
+  position: relative;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: color var(--transition-normal);
+}
+
+.navLink:hover {
+  color: var(--gold);
+}
+
+.navLink.active {
+  color: var(--gold);
+}
+
+.navLinkUnderline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-gold);
+  transition: width var(--transition-normal);
+}
+
+.navLink:hover .navLinkUnderline,
+.navLink.active .navLinkUnderline {
+  width: 100%;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bookingBtn {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.mobileMenuBtn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+}
+
+.mobileMenuBtn:hover {
+  background: rgba(255, 215, 0, 0.1);
+  color: var(--gold);
+}
+
+.mobileNav {
+  background: var(--black);
+  border-top: 1px solid rgba(255, 215, 0, 0.1);
+  overflow: hidden;
+}
+
+.mobileNavContent {
+  padding: 1.5rem;
+}
+
+.mobileNavLink {
+  display: block;
+  color: var(--white);
+  text-decoration: none;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 500;
+  transition: all var(--transition-normal);
+}
+
+.mobileNavLink:hover {
+  color: var(--gold);
+  padding-left: 1rem;
+}
+
+.mobileNavLink.active {
+  color: var(--gold);
+}
+
+.mobileNavCTA {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.mobileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .topBar {
+    padding: 0.25rem 0;
+    font-size: 0.75rem;
+  }
+
+  .topBarContent {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .contactInfo {
+    gap: 1rem;
+  }
+
+  .headerContent {
+    height: 70px;
+  }
+
+  .desktopNav {
+    display: none;
+  }
+
+  .mobileMenuBtn {
+    display: flex;
+  }
+
+  .logoText {
+    display: none;
+  }
+
+  .bookingBtn {
+    display: none;
+  }
+
+  .header {
+    top: 68px; /* Adjusted for smaller top bar */
+  }
+
+  .header.scrolled {
+    top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .contactInfo {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .topBar {
+    font-size: 0.75rem;
+  }
+}
+
+/* Animation Effects */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  animation: slideDown 0.5s ease-out;
+}
+
+/* Logo Animation */
+.logo img {
+  transition: transform var(--transition-normal);
+}
+
+.logo:hover img {
+  transform: rotate(5deg);
+}
+
+/* Navigation Hover Effects */
+.navLink {
+  position: relative;
+  overflow: hidden;
+}
+
+.navLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+  transition: left var(--transition-slow);
+}
+
+.navLink:hover::before {
+  left: 100%;
+}
+
+/* Mobile Menu Animation */
+.mobileNavLink {
+  position: relative;
+  overflow: hidden;
+}
+
+.mobileNavLink::after {
+  content: '';
+  position: absolute;
+  left: -100%;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gradient-gold);
+  transition: left var(--transition-normal);
+}
+
+.mobileNavLink:hover::after {
+  left: 0;
+}
+
+/* Glass Effect for Scrolled Header */
+.header.scrolled {
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+/* Pulse Effect for Booking Button */
+.bookingBtn {
+  position: relative;
+  overflow: hidden;
+}
+
+.bookingBtn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.bookingBtn:hover::before {
+  width: 300px;
+  height: 300px;
+}

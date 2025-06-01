@@ -1,0 +1,493 @@
+/* src/app/studio-booking/StudioBooking.module.css */
+
+.studioBooking {
+  padding-top: 10px; /* Account for fixed header */
+}
+
+.hero {
+  background: var(--gradient-dark);
+  color: var(--white);
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/images/patterns/camera.svg') repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.heroContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.heroLabel {
+  display: inline-block;
+  font-size: 1.25rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.heroDescription {
+  font-size: 1.25rem;
+  color: var(--gray-300);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.heroStats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.statIcon {
+  color: var(--gold);
+  font-size: 1.5rem;
+}
+
+.statNumber {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+
+.statLabel {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--gray-400);
+}
+
+.heroVisual {
+  position: relative;
+}
+
+.studioImages {
+  position: relative;
+}
+
+.mainImage {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transition-slow);
+}
+
+.mainImage:hover {
+  transform: scale(1.02);
+}
+
+.thumbnails {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.thumbnail {
+  flex: 1;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal);
+  cursor: pointer;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.features {
+  background: var(--bg-primary);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionHeader h2 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.sectionHeader p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.featureCard {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: var(--radius-xl);
+  text-align: center;
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-normal);
+}
+
+.featureCard:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
+}
+
+.featureIcon {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: var(--black);
+}
+
+.featureCard h3 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.featureCard p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.pricing {
+  background: var(--bg-secondary);
+}
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pricingCard {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.pricingCard:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-10px);
+}
+
+.pricingCard.popular {
+  border: 2px solid var(--gold);
+  transform: scale(1.05);
+}
+
+.pricingCard.popular::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 215, 0, 0.05), transparent);
+  border-radius: var(--radius-xl);
+  pointer-events: none;
+}
+
+.popularBadge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient-gold);
+  color: var(--black);
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.planHeader {
+  margin-bottom: 2rem;
+}
+
+.planHeader h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.amount {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.duration {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.features {
+  list-style: none;
+  margin: 20px;
+  padding: 0;
+  text-align: left;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.features svg {
+  color: var(--emerald);
+  flex-shrink: 0;
+}
+
+.specifications {
+  background: var(--bg-primary);
+}
+
+.specsContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.specsText h2 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.specsText p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.specsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.specItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.specLabel {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.specValue {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.specsImage {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.bookingSection {
+  background: var(--bg-secondary);
+}
+
+.bookingFormContainer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroContent {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .specsContent {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .specsText {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .studioBooking {
+    padding-top: 138px; /* Adjusted for mobile header */
+    margin: 10px;
+  }
+
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .heroStats {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .pricingGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .pricingCard.popular {
+    transform: none;
+  }
+
+  .specsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .thumbnails {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 2rem 0;
+  }
+
+  .heroStats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .featureCard, .pricingCard {
+    padding: 1.5rem;
+  }
+
+  .amount {
+    font-size: 2rem;
+  }
+
+  .specsContent {
+    gap: 2rem;
+  }
+}
+
+/* Animation Effects */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.featureCard, .pricingCard {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Hover Effects */
+.featureIcon {
+  transition: transform var(--transition-normal);
+}
+
+.featureCard:hover .featureIcon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.pricingCard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+  transition: left var(--transition-slow);
+}
+
+.pricingCard:hover::after {
+  left: 100%;
+}
+
+/* Loading states */
+.loadingCard {
+  background: var(--skeleton);
+  animation: shimmer 1.5s infinite;
+}
+
+.loadingCard * {
+  visibility: hidden;
+}

@@ -1,0 +1,386 @@
+/* src/app/sitemap/Sitemap.module.css */
+
+.sitemapPage {
+  padding-top: 124px; /* Account for fixed header */
+  background: var(--bg-primary);
+  min-height: 100vh;
+}
+
+.hero {
+  background: var(--gradient-dark);
+  color: var(--white);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.heroIcon {
+  font-size: 3rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.heroContent h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+}
+
+.heroContent p {
+  font-size: 1.125rem;
+  color: var(--gray-300);
+}
+
+.content {
+  padding: 4rem 0;
+}
+
+.sitemapGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.sitemapSection {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-normal);
+}
+
+.sitemapSection:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--gold);
+}
+
+.sectionHeader {
+  background: var(--bg-primary);
+  padding: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sectionIcon {
+  font-size: 1.5rem;
+  color: var(--gold);
+}
+
+.sectionHeader h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin: 0;
+  flex: 1;
+}
+
+.linkCount {
+  background: var(--gold);
+  color: var(--black);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.linksList {
+  padding: 1rem;
+}
+
+.linkItem {
+  margin-bottom: 1rem;
+  transition: all var(--transition-normal);
+}
+
+.linkItem:last-child {
+  margin-bottom: 0;
+}
+
+.link {
+  display: block;
+  padding: 1rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+.link:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-md);
+  transform: translateX(5px);
+}
+
+.linkContent h3 {
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.linkContent p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.linkUrl {
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-family: monospace;
+  background: rgba(255, 215, 0, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
+.additionalInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.infoCard {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  text-align: center;
+  transition: all var(--transition-normal);
+}
+
+.infoCard:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-md);
+}
+
+.infoCard h3 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.infoCard p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.infoCard code {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-family: monospace;
+  color: var(--gold);
+  display: inline-block;
+}
+
+.infoCard a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.infoCard a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sitemapPage {
+    padding-top: 138px; /* Adjusted for mobile header */
+  }
+
+  .hero {
+    padding: 2rem 0;
+  }
+
+  .content {
+    padding: 2rem 0;
+  }
+
+  .sitemapGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .sectionHeader {
+    padding: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .linksList {
+    padding: 1rem;
+  }
+
+  .link {
+    padding: 1rem;
+  }
+
+  .additionalInfo {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .infoCard {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sitemapSection {
+    margin: 0 1rem;
+  }
+
+  .sectionHeader {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .linksList {
+    padding: 0.5rem;
+  }
+
+  .link {
+    padding: 0.75rem;
+  }
+
+  .linkContent h3 {
+    font-size: 0.9rem;
+  }
+
+  .linkContent p {
+    font-size: 0.8rem;
+  }
+
+  .infoCard {
+    margin: 0 1rem;
+    padding: 1rem;
+  }
+}
+
+/* Animation Effects */
+.sitemapSection {
+  position: relative;
+  overflow: hidden;
+}
+
+.sitemapSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.05), transparent);
+  transition: left var(--transition-slow);
+}
+
+.sitemapSection:hover::before {
+  left: 100%;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+  transition: left var(--transition-normal);
+}
+
+.link:hover::after {
+  left: 100%;
+}
+
+.infoCard:hover {
+  animation: pulse 1s ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .hero {
+    background: none;
+    color: black;
+    padding: 1rem 0;
+  }
+
+  .sitemapGrid {
+    display: block;
+  }
+
+  .sitemapSection {
+    break-inside: avoid;
+    margin-bottom: 2rem;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .additionalInfo {
+    display: none;
+  }
+
+  .link {
+    border: none;
+    padding: 0.5rem;
+  }
+
+  .linkContent p {
+    display: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .link {
+    border-width: 2px;
+  }
+  
+  .linkUrl {
+    background: transparent;
+    border: 1px solid var(--gold);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .sitemapSection,
+  .link,
+  .infoCard {
+    transition: none;
+  }
+  
+  .sitemapSection::before,
+  .link::after {
+    display: none;
+  }
+  
+  .infoCard:hover {
+    animation: none;
+  }
+}

@@ -1,0 +1,361 @@
+/* src/app/cancellation/Cancellation.module.css */
+
+.cancellationPage {
+  padding-top: 124px; /* Account for fixed header */
+  background: var(--bg-primary);
+  min-height: 100vh;
+}
+
+.hero {
+  background: var(--gradient-dark);
+  color: var(--white);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.heroIcon {
+  font-size: 3rem;
+  color: var(--coral);
+  margin-bottom: 1rem;
+}
+
+.heroContent h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+}
+
+.heroContent p {
+  font-size: 1.125rem;
+  color: var(--gray-300);
+}
+
+.content {
+  padding: 4rem 0;
+}
+
+.policyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.policyCard {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-normal);
+}
+
+.policyCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--gold);
+}
+
+.cardHeader {
+  background: var(--bg-primary);
+  padding: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cardIcon {
+  font-size: 1.5rem;
+  color: var(--gold);
+}
+
+.cardHeader h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.cardContent {
+  padding: 2rem;
+}
+
+.refundTiers {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.refundTier {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.refundTier:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-md);
+}
+
+.tierHeader {
+  background: var(--bg-primary);
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.tierHeader svg {
+  color: var(--gold);
+}
+
+.tierDetails {
+  padding: 1.5rem;
+}
+
+.refundAmount {
+  display: inline-block;
+  background: var(--emerald);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+}
+
+.refundAmount.noRefund {
+  background: var(--coral);
+}
+
+.tierDetails ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tierDetails li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.tierDetails li::before {
+  content: '•';
+  color: var(--gold);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.reschedulingOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.option {
+  padding: 1.5rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+}
+
+.option:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-md);
+}
+
+.option h3 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.option h3 svg {
+  color: var(--gold);
+}
+
+.option ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.option li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.option li::before {
+  content: '✓';
+  color: var(--emerald);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.studioPolicy {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.timeSlots {
+  background: var(--bg-primary);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.timeSlots h3 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+}
+
+.timeSlots ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeSlots li {
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.timeSlots strong {
+  color: var(--text-primary);
+}
+
+.cardContent ol {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+}
+
+.cardContent ol li {
+  margin-bottom: 0.5rem;
+}
+
+.cardContent h3 {
+  color: var(--text-primary);
+  margin: 1.5rem 0 1rem 0;
+  font-size: 1.125rem;
+}
+
+.contactDetails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.contactMethod {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+}
+
+.contactMethod:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.contactMethod h3 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.contactMethod p {
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.contactMethod small {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cancellationPage {
+    padding-top: 138px; /* Adjusted for mobile header */
+  }
+
+  .hero {
+    padding: 2rem 0;
+  }
+
+  .content {
+    padding: 2rem 0;
+  }
+
+  .policyGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .cardHeader {
+    padding: 1.5rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .cardContent {
+    padding: 1.5rem;
+  }
+
+  .studioPolicy {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .contactDetails {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .policyCard {
+    margin: 0 1rem;
+  }
+
+  .cardHeader {
+    padding: 1rem;
+  }
+
+  .cardContent {
+    padding: 1rem;
+  }
+
+  .timeSlots {
+    padding: 1rem;
+  }
+
+  .contactMethod {
+    padding: 1rem;
+  }
+}

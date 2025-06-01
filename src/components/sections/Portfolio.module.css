@@ -1,0 +1,288 @@
+/* src/components/sections/Portfolio.module.css */
+
+.portfolio {
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionLabel {
+  display: inline-block;
+  font-size: 1.25rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.sectionDescription {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.filterTabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filterIcon {
+  color: var(--gold);
+  margin-right: 0.5rem;
+}
+
+.filterTab {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-transform: capitalize;
+}
+
+.filterTab:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.filterTab.active {
+  background: var(--gradient-gold);
+  border-color: var(--gold);
+  color: var(--black);
+}
+
+.portfolioGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.portfolioCard {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+}
+
+.portfolioCard:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--gold);
+}
+
+.imageContainer {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.portfolioImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.portfolioCard:hover .portfolioImage {
+  transform: scale(1.1);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 10, 0.8) 0%,
+    rgba(255, 215, 0, 0.3) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.portfolioCard:hover .imageOverlay {
+  opacity: 1;
+}
+
+.overlayContent {
+  text-align: center;
+  color: var(--white);
+  padding: 1rem;
+}
+
+.itemTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.itemDescription {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.itemStats {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  font-size: 0.875rem;
+}
+
+.itemStats span {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.category {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--black);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.portfolioActions {
+  text-align: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+}
+
+.modalContent {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+  max-width: 900px;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.modalImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 60vh;
+  object-fit: cover;
+}
+
+.modalInfo {
+  padding: 2rem;
+}
+
+.modalInfo h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.modalInfo p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.modalStats {
+  display: flex;
+  gap: 1.5rem;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.modalStats span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .portfolioGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .filterTabs {
+    gap: 0.5rem;
+  }
+
+  .filterTab {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .modal {
+    padding: 1rem;
+  }
+
+  .modalInfo {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .filterTabs {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .portfolioCard {
+    max-width: 100%;
+  }
+
+  .cardContent {
+    padding: 1rem;
+  }
+}

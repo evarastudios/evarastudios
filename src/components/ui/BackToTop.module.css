@@ -1,0 +1,33 @@
+/* // src/components/ui/BackToTop.module.css */
+.backToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-gold);
+  border: none;
+  border-radius: 50%;
+  color: var(--black);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+  transition: all var(--transition-normal);
+}
+
+.backToTop:hover {
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .backToTop {
+    bottom: 1rem;
+    right: 1rem;
+    width: 45px;
+    height: 45px;
+  }
+}

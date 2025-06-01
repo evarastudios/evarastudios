@@ -1,0 +1,260 @@
+/* src/app/privacy-policy/LegalPages.module.css */
+/* src/app/terms/LegalPages.module.css */
+/* src/app/booking-policy/LegalPages.module.css */
+
+.legalPage {
+  padding-top: 124px; /* Account for fixed header */
+  background: var(--bg-primary);
+  min-height: 100vh;
+}
+
+.hero {
+  background: var(--gradient-dark);
+  color: var(--white);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.heroIcon {
+  font-size: 3rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.heroContent h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+}
+
+.heroContent p {
+  font-size: 1.125rem;
+  color: var(--gray-300);
+}
+
+.content {
+  padding: 4rem 0;
+}
+
+.contentLayout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.sidebar {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  position: sticky;
+  top: 150px;
+}
+
+.sidebar h3 {
+  font-size: 1.125rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 0.5rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: block;
+  padding: 0.5rem 0;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+}
+
+.sidebar a:hover {
+  color: var(--gold);
+  padding-left: 0.5rem;
+}
+
+.mainContent {
+  background: var(--bg-secondary);
+  padding: 3rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.section {
+  margin-bottom: 3rem;
+  scroll-margin-top: 150px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.section h2 {
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+}
+
+.section h2 svg {
+  color: var(--gold);
+}
+
+.section h3 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin: 1.5rem 0 1rem 0;
+}
+
+.section p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.section ul,
+.section ol {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.section li {
+  margin-bottom: 0.5rem;
+}
+
+.section li strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.contactInfo {
+  background: var(--bg-primary);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  margin-top: 1rem;
+}
+
+.contactInfo p {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.contactInfo strong {
+  color: var(--text-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contentLayout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .sidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .sidebar h3 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .legalPage {
+    padding-top: 138px; /* Adjusted for mobile header */
+  }
+
+  .hero {
+    padding: 2rem 0;
+  }
+
+  .content {
+    padding: 2rem 0;
+  }
+
+  .mainContent {
+    padding: 2rem;
+  }
+
+  .sidebar {
+    padding: 1rem;
+  }
+
+  .sidebar ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .sidebar li {
+    margin-bottom: 0;
+  }
+
+  .sidebar a {
+    padding: 0.5rem;
+    background: var(--bg-primary);
+    border-radius: var(--radius-md);
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContent {
+    padding: 1.5rem;
+  }
+
+  .section {
+    margin-bottom: 2rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .section h3 {
+    font-size: 1.125rem;
+  }
+
+  .contactInfo {
+    padding: 1rem;
+  }
+}
