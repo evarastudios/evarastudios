@@ -157,6 +157,10 @@ h3 {
   padding: var(--spacing-3xl) 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .text-gradient {
   background: var(--gradient-gold);
   -webkit-background-clip: text;

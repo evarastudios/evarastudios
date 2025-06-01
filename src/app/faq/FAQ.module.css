@@ -323,9 +323,7 @@
 }
 
 /* Smooth scrolling for anchor links */
-html {
-  scroll-behavior: smooth;
-}
+
 
 /* Print styles */
 @media print {
