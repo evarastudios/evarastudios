@@ -101,7 +101,7 @@ const About: React.FC = () => {
                   className={styles.image}
                 />
                 <Image
-                  src="/images/about/team-photo.jpg"
+                  src="/images/about/logo-gold.png"
                   alt="Evara Studios team"
                   width={200}
                   height={200}
